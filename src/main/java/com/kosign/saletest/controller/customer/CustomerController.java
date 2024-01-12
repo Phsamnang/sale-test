@@ -30,10 +30,16 @@ public class CustomerController extends SaleRestController {
         service.removeCustomer(id);
         return ok();
     }
+
     @PutMapping("/customer/{id}")
-    public ResponseEntity<?>updateCustomer(@PathVariable Long id, @RequestBody CustomerRequest request){
-        service.updateCustomer(id,request);
+    public ResponseEntity<?> updateCustomer(@PathVariable Long id, @RequestBody CustomerRequest request) {
+        service.updateCustomer(id, request);
         return ok();
+    }
+
+    @GetMapping("/customer/{id}")
+    public ResponseEntity<?> getCustomerById(@PathVariable Long id) {
+        return ok(service.getCustomerById(id));
     }
 }
 

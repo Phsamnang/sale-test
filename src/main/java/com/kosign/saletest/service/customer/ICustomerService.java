@@ -10,4 +10,5 @@ public interface ICustomerService {
    List<CustomerResponse> getAllCustomer();
    void removeCustomer(Long id);
    void updateCustomer(Long id,CustomerRequest payload);
+   CustomerResponse getCustomerById(Long id);
 }

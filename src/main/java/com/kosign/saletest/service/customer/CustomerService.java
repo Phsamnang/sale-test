@@ -47,4 +47,9 @@ public class CustomerService implements ICustomerService {
         customer.setPhone(payload.customerPhone());
         repository.save(customer);
     }
+
+    @Override
+    public CustomerResponse getCustomerById(Long id) {
+        return repository.findById(id).get().toCustomerResponse();
+    }
 }
